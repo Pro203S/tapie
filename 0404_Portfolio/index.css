@@ -61,3 +61,25 @@ body {
         background-position: 0%;
     }
 }
+
+.screen {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigator {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    backdrop-filter: blur(10px);
+    width: 270px;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 92px -22px rgba(255,255,255,1) inset;
+    background-color: #1a1a1a88;
+}
+
+.home {
+    height: 100vh;
+}
