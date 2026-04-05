@@ -57,6 +57,8 @@
     touch-action: none;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+
+    font-family: 'Pretendard';
 }
 
 html {
@@ -103,6 +105,8 @@ body {
 
 /*#region 네비게이터*/
 .navigator {
+    border: 1px solid #ffffff1a;
+    z-index: 1000;
     position: absolute;
     left: 50%;
     bottom: 50px;
@@ -110,7 +114,6 @@ body {
     width: 235px;
     height: 42.5px;
     border-radius: 50px;
-    box-shadow: inset 0px 0px 20px 0px rgb(255 255 255 / 45%);
     background-color: #ffffff1f;
     opacity: 0;
     transform: translateX(-50%) translateY(70px);
@@ -121,7 +124,6 @@ body {
 
     animation: fadeIn .6s cubic-bezier(0.187, 1.736, 0.64, 1) forwards;
     animation-delay: 1s;
-    border: 2.77px solid rgba(255, 255, 255, .5);
 }
 
 .navigator a {
@@ -144,6 +146,7 @@ body {
 .navigator a img:hover {
     background-color: #88888888;
 }
+
 /*#endregion*/
 
 /*#region home*/
@@ -178,42 +181,172 @@ body {
     opacity: 0;
     margin: 0 auto;
 }
+
+/*#endregion*/
+
+/*#region section*/
+.section {
+    display: flex;
+    flex-direction: column;
+    width: min(1100px, calc(100vw - 48px));
+    margin: 0 auto;
+    padding: 0 0 120px;
+    box-sizing: border-box;
+}
+
+.section .subject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.section .subject .title {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-size: 48px;
+    color: #fff;
+}
+
+.section .subject .desc {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-size: 18px;
+    color: #d1d1d1;
+}
+
 /*#endregion*/
 
 /*#region projects*/
-.projects {
-    width: 100vw;
-    padding: 20px;
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-content: start;
 }
 
-.projects .texts {
+#projects .subject {
+    grid-column: 1 / -1;
+    margin-bottom: 8px;
+}
+
+#projects .project {
+    min-height: 260px;
+    padding: 24px;
+    border-radius: 28px;
+    border: 1px solid #ffffff1a;
+    background-color: #ffffff1f;
+    backdrop-filter: blur(14px);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
 }
 
-.projects .title {
-    font-family: 'Pretendard';
-    font-size: 2rem;
+#projects .project .content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#projects .project .title {
+    font-size: 1.6rem;
     font-weight: 700;
     color: #fff;
 }
 
-.projects .desc {
-    font-family: 'Pretendard';
+#projects .project .desc {
     font-size: 1rem;
     font-weight: 300;
+    line-height: 1.65;
+    color: #d7d7d7;
+}
+
+#projects .project .row .link {
+    width: fit-content;
+    padding: 12px 18px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: #111;
+    text-decoration: none;
+    font-size: .96rem;
+    font-weight: 600;
+    transition-duration: .2s;
+    cursor: pointer;
+    border: 1px solid #ffffff00;
+}
+
+#projects .project .row .link:hover {
+    background-color: #00000000;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ffffff1a;
     color: #fff;
 }
 
-.projects .project {
+#projects .project .properties {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
 }
 
-@media (min-width: 900px) {
-    .projects {
-        padding: 10vw;
+#projects .project .properties span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: 50px;
+    border: 1px solid #ffffff1a;
+    background-color: #ffffff1f;
+    color: #f2f2f2;
+    font-size: .86rem;
+    font-weight: 400;
+}
+
+#projects .project .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 5px 0 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        width: calc(100vw - 32px);
+        padding-bottom: 96px;
+    }
+
+    #projects {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #projects .subject {
+        margin-bottom: 2px;
+    }
+
+    #projects .project {
+        min-height: 220px;
+        padding: 24px;
+        border-radius: 24px;
+        gap: 22px;
+    }
+
+    #projects .project .title {
+        font-size: 1.35rem;
+    }
+
+    #projects .project .row {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
+
 
 /*#endregion*/
