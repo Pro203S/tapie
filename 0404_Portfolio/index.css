@@ -188,10 +188,11 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    width: min(1100px, calc(100vw - 48px));
+    width: 100%;
     margin: 0 auto;
     padding: 0 0 120px;
     box-sizing: border-box;
+    max-width: 800px;
 }
 
 .section .subject {
@@ -343,7 +344,7 @@ body {
     }
 
     #projects .project .row {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 }
