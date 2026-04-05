@@ -183,7 +183,7 @@ body {
 /*#region projects*/
 .projects {
     width: 100vw;
-    padding: 15px;
+    padding: 20px;
 }
 
 .projects .texts {
@@ -208,6 +208,12 @@ body {
 .projects .project {
     display: flex;
     flex-direction: column;
+}
+
+@media (min-width: 900px) {
+    .projects {
+        padding: 10vw;
+    }
 }
 
 /*#endregion*/
