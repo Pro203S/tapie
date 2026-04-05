@@ -183,7 +183,31 @@ body {
 /*#region projects*/
 .projects {
     width: 100vw;
-    min-height: 100vh;
+    padding: 15px;
+}
+
+.projects .texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects .title {
+    font-family: 'Pretendard';
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.projects .desc {
+    font-family: 'Pretendard';
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.projects .project {
+    display: flex;
+    flex-direction: column;
 }
 
 /*#endregion*/
