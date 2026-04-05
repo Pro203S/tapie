@@ -13,25 +13,24 @@
 
 <body>
     <div class="screen">
-        <div class="navigator">
-            <a href="#home">
+        <div class="navigator" aria-label="섹션 이동">
+            <a href="#home" aria-label="홈으로 이동">
                 <img draggable="false" src="./assets/house.svg" alt="홈" title="홈" />
             </a>
-            <a href="#projects">
+            <a href="#projects" aria-label="프로젝트 섹션으로 이동">
                 <img draggable="false" src="./assets/list.svg" alt="프로젝트" title="프로젝트" />
             </a>
-            <a href="#connect">
+            <a href="#connect" aria-label="문의 섹션으로 이동">
                 <img draggable="false" src="./assets/connect.svg" alt="문의하기" title="문의하기" />
             </a>
         </div>
         <div class="home" id="home">
             <div class="texts">
                 <span class="title">Pro203S</span>
-                <span class="desc" style="animation-delay: .25s;">만들며 배우는 것을 좋아하는
-                    <!-- strong: 다른 텍스트에 비해서 강조되는 텍스트 -->
+                <span class="desc fade-delay-1">만들며 배우는 것을 좋아하는
                     <strong> 문태영</strong>
                     입니다.</span>
-                <span class="desc" style="animation-delay: .5s;">스크롤 하시면 제 프로젝트들을 보실 수 있어요.</span>
+                <span class="desc fade-delay-2">스크롤 하시면 제 프로젝트들을 보실 수 있어요.</span>
             </div>
         </div>
         <div class="section" id="projects">
@@ -56,7 +55,6 @@
                 <div class="content">
                     <span class="title">jaeminlang</span>
                     <span class="desc">한국어와 그 외 기호로 코딩할 수 있는
-                        <!-- del 태그: 취소선 -->
                         <del>난해한</del>
                         프로그래밍 언어입니다.
                     </span>
@@ -78,7 +76,8 @@
                 </div>
                 <div class="row">
                     <div class="properties">
-                        <span>Expo</span>
+                        <span>C#</span>
+                        <span>Unity</span>
                     </div>
                     <a class="link" href="https://github.com/Pro203S/AdofaiDeeplink" target="_blank"
                         rel="noreferrer">GitHub</a>
@@ -105,6 +104,23 @@
                     협업 제의는 언제든 환영입니다.<br>
                     이외에도 문의 사항이 있으시면 언제든 연락해주세요.
                 </span>
+            </div>
+            <div class="connect">
+                <span class="content">me@pro203s.kr</span>
+                <a class="launch" href="mailto:me@pro203s.kr">
+                    이메일
+                </a>
+            </div>
+            <div class="connect">
+                <span class="content">@pro203s</span>
+                <a class="launch" href="https://discord.com/users/388653325161332736">
+                    Discord
+                </a>
+            </div>
+        </div>
+        <div class="section" style="display: flex;">
+            <div class="copyright">
+                <span>© 2026 Pro203S. All rights reserved.</span>
             </div>
         </div>
     </div>
