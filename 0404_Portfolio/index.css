@@ -182,14 +182,6 @@ body {
     margin: 0 auto;
 }
 
-.fade-delay-1 {
-    animation-delay: .25s;
-}
-
-.fade-delay-2 {
-    animation-delay: .5s;
-}
-
 /*#endregion*/
 
 /*#region section*/
