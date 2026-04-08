@@ -1,3 +1,7 @@
 div {
     color: blue;
 }
+
+[class="class1"] {
+    color: yellow;
+}
