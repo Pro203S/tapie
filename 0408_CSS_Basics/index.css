@@ -44,3 +44,13 @@ p {
     font-size: 2rem;
     font-weight: 700;
 }
+
+.left {
+    background-color: green;
+    margin: 10px;
+}
+
+.right {
+    background-color: yellow;
+    margin: 10px;
+}
