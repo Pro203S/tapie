@@ -1,4 +1,20 @@
 .box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.box span {
+    width: 50px;
+}
+
+.cl1 {
+    background-color: #f00;
+}
+
+.cl2 {
+    background-color: #0f0;
+}
+
+.cl3 {
+    background-color: #00f;
 }
