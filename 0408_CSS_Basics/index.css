@@ -6,10 +6,6 @@ div {
     color: yellow;
 }
 
-#id {
-    color: aqua;
-}
-
 .button:active {
     background: black;
 }
@@ -27,19 +23,19 @@ li:nth-child(2) {
     color: yellow;
 }
 
-/* .class1::before {
-    content: "beforecontent_";
-}
-
-
-.class1::after {
-    content: "_aftercontent";
-} */
-
-p::first-letter {
-    color: red;
-}
 
 p::selection {
     background-color: black;
+}
+
+.parent > .child {
+    color: red;
+}
+
+p {
+    color: #f27373;
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-decoration: line-through;
 }
