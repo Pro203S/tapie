@@ -1,6 +1,7 @@
 .box {
     display: flex;
-    justify-content: flex-end;
+    height: 95vh;
+    flex-direction: row-reverse;
 }
 
 .box span {
