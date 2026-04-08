@@ -3,3 +3,36 @@
     src: url("./assets/fonts/Roboto.ttf");
 }
 
+* {
+    font-family: 'Roboto';
+}
+
+html,
+body {
+    margin: 0;
+
+    background-color: #0f0f0f;
+}
+
+.container {
+    width: 100vw;
+}
+
+.header {
+    padding: 0 16px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+}
+
+.header>.logo {
+    padding: 18px 14px 18px 16px;
+
+}
+
+.header>.logo>embed {
+    pointer-events: none;
+}
+
+@media screen and (min-width: 960px) {}
