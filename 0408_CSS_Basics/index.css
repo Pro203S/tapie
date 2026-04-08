@@ -27,11 +27,15 @@ li:nth-child(2) {
     color: yellow;
 }
 
-.class1::before {
+/* .class1::before {
     content: "beforecontent_";
 }
 
 
 .class1::after {
     content: "_aftercontent";
+} */
+
+p::first-letter {
+    color: red;
 }
