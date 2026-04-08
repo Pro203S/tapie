@@ -2,6 +2,14 @@ div {
     color: blue;
 }
 
-[class="class1"] {
+.class1:active {
     color: yellow;
+}
+
+#id {
+    color: aqua;
+}
+
+.button:hover {
+    background: black;
 }
