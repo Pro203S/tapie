@@ -13,3 +13,8 @@ div {
 .button:active {
     background: black;
 }
+
+input:focus {
+    outline: none;
+    border: 2px solid blue;
+}
