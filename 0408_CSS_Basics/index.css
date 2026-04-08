@@ -10,6 +10,6 @@ div {
     color: aqua;
 }
 
-.button:hover {
+.button:active {
     background: black;
 }
