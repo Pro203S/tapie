@@ -60,7 +60,8 @@ span {
 }
 
 .header>.top .button:hover,
-.header>.top .buttonWithLabel:hover {
+.header>.top .buttonWithLabel:hover,
+.header>.top .list:hover {
     background-color: #4c4c4c;
 }
 
@@ -85,8 +86,8 @@ span {
     width: 24px;
     height: 24px;
     padding: 8px;
-    cursor: pointer;
     border-radius: 50%;
+    pointer-events: auto !important;
 }
 
 .header>.top>.list:hover {
