@@ -3,6 +3,7 @@
     src: url("./assets/fonts/Roboto.ttf");
 }
 
+
 * {
     font-family: 'Roboto';
 }
@@ -18,21 +19,71 @@ body {
     width: 100vw;
 }
 
+/* #region 헤더 */
+
 .header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header>.top {
     padding: 0 16px;
     height: 56px;
 
     display: flex;
     align-items: center;
+    backdrop-filter: blur(5px);
 }
 
-.header>.logo {
+.header>.top>.logo {
     padding: 18px 14px 18px 16px;
-
 }
 
-.header>.logo>embed {
+.header>.top>.logo>embed {
     pointer-events: none;
 }
+
+.header>.top>.list {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.header>.top>.list:hover {
+    background-color: #4c4c4c;
+}
+
+.header>.top>.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.header>.top .right .profile {
+    cursor: pointer;
+    margin: 0 8px;
+    background-color: transparent;
+    overflow: hidden;
+    outline: none;
+    border: #000 solid 0px;
+}
+
+.header>.top .right .fakeProfile {
+    width: 32px;
+    height: 32px;
+    background: #4285F4;
+    border: none;
+    outline: none;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* #endregion */
 
 @media screen and (min-width: 960px) {}
