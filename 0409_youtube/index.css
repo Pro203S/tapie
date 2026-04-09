@@ -168,7 +168,7 @@ span {
 
 /* #endregion */
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 710px) {
     .searchBox>input {
         width: 30vw;
     }
