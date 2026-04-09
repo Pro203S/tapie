@@ -20,7 +20,7 @@ body {
     height: 100vh;
 }
 
-embed,
+svg,
 span {
     pointer-events: none;
     margin: auto 0;
@@ -71,7 +71,7 @@ span {
     background-color: #4c4c4c;
 }
 
-.header>.top button embed {
+.header>.top button svg {
     margin: auto;
 }
 
