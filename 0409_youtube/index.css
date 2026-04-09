@@ -22,6 +22,7 @@ body {
 embed,
 span {
     pointer-events: none;
+    margin: auto 0;
 }
 
 /* #region 헤더 */
@@ -29,6 +30,7 @@ span {
 .header {
     display: flex;
     flex-direction: column;
+    backdrop-filter: blur(5px);
 }
 
 .header>.top .button {
@@ -38,6 +40,7 @@ span {
     border: #000 solid 0px;
     width: 36px;
     height: 36px;
+    margin: auto 0;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -48,6 +51,7 @@ span {
     border-radius: 50px;
     border: #000 solid 0px;
     height: 36px;
+    margin: auto 0;
     margin-right: 15px;
     padding: 0 7px;
     cursor: pointer;
@@ -75,7 +79,6 @@ span {
 
     display: flex;
     align-items: center;
-    backdrop-filter: blur(5px);
 }
 
 .header>.top>.logo {
@@ -98,7 +101,7 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-left: auto;
+    width: 100%;
 }
 
 .header>.top .right .profile {
@@ -125,4 +128,48 @@ span {
 
 /* #endregion */
 
-@media screen and (min-width: 960px) {}
+/* #region 헤더 -> 검색 */
+
+.searchBox {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.searchBox>input {
+    outline: none;
+    font-size: 14px;
+    margin: auto 0;
+    border-color: hsl(0, 0%, 18.82%);
+    background-color: hsl(0, 0%, 7%);
+    box-shadow: none;
+    color: #fff;
+    height: calc(100% - 2px);
+    border: 1px solid hsl(0, 0%, 18.82%);
+    border-right-width: 0;
+    padding: 0 10px;
+    border-radius: 25px 0 0 25px;
+}
+
+.searchBox>input:focus {
+    border: #3ea6ff solid 1px;
+}
+
+.searchBox>button {
+    height: 100%;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    border: #000 solid 0px;
+    border: 1px solid hsl(0, 0%, 18.82%);
+    background-color: hsla(0, 0%, 100%, .08);
+    width: 64px;
+    display: flex;
+}
+
+/* #endregion */
+
+@media screen and (min-width: 960px) {
+    .searchBox>input {
+        width: 30vw;
+    }
+}
