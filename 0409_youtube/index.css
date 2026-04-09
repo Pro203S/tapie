@@ -23,6 +23,30 @@ svg {
     height: 100vh;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommends {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.recommends button {
+    display: inline-flex;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline-width: 0;
+    box-sizing: border-box;
+    background: none;
+    text-decoration: none;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .top {
     display: flex;
     flex-direction: row;
@@ -151,17 +175,20 @@ svg {
 .sidebar .section {
     padding: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
 }
 
 .navigate {
     padding: 0 12px;
-    height: 48px;
+    height: 40px;
     border-radius: 10px;
     background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    gap: 10px;
 }
 
 .navigate svg {
@@ -177,4 +204,39 @@ svg {
 
 .navigate:hover {
     background-color: hsl(0, 0%, 35%) !important;
+}
+
+.display-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.section>.name {
+    padding: 6px 12px 4px;
+    color: #f1f1f1;
+}
+
+.mainscreen {
+    width: calc(100vw - 240px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mainscreen>.recommends button {
+    padding: 7px 10px;
+    color: #f1f1f1;
+    background-color: #ffffff10;
+    font-size: 14px;
+    border-radius: 7px;
+}
+
+.mainscreen>.recommends button[selected] {
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+.videos {
+    display: flex;
+    padding: 15px;
 }
