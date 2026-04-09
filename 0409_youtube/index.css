@@ -168,6 +168,10 @@ span {
 
 /* #endregion */
 
+/* #region 왼쪽 사이드바 */
+
+/* #endregion */
+
 @media screen and (min-width: 710px) {
     .searchBox>input {
         width: 30vw;
