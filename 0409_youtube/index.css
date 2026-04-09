@@ -137,3 +137,9 @@ body {
     cursor: pointer;
     background-image: url("./assets/profile.jpg");
 }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+}
