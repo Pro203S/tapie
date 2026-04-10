@@ -166,6 +166,7 @@ svg {
     border-radius: 50%;
     cursor: pointer;
     background-image: url("./assets/profile.jpg");
+    background-size: contain;
 }
 
 .sidebar {
@@ -240,5 +241,57 @@ svg {
 
 .videos {
     display: flex;
+    gap: 20px;
     padding: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: calc(100vh - 62px - 31px - 10px);
+    overflow-y: auto;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    width: calc((100% - 100px) / 3);
+}
+
+.video .thumbnail {
+    border-radius: 7px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background-color: hsl(0, 0%, 18.82%);
+    object-fit: cover;
+}
+
+.video .info {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+.video .info .profile {
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    margin-right: 7px;
+}
+
+.video .info .texts {
+    display: flex;
+    flex-direction: column;
+}
+
+.video .info .texts .title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.video .info .texts .status {
+    color: #9f9f9f;
+    font-weight: 400;
+    font-size: .9rem;
 }
