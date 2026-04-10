@@ -1,0 +1,27 @@
+.linearV {
+    display: flex;
+    flex-direction: row;
+}
+
+.linearH {
+    display: flex;
+    flex-direction: column;
+}
+
+.red {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.blue {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.green {
+    width: 100px;
+    height: 200px;
+    background-color: lime;
+}
