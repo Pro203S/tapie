@@ -1,0 +1,5 @@
+.sidebar {
+    width: 48px;
+    height: calc(100vh - 12px - 20px);
+    padding: 8px 12px 20px;
+}
