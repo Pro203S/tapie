@@ -41,3 +41,64 @@
     color: rgb(168, 168, 168);
     margin: 0 auto;
 }
+
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts .post {
+    margin-top: 16px;
+}
+
+.posts .title {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f5f5f5;
+}
+
+.posts .post .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px 12px 20px;
+}
+
+.posts .post .header .profile_border {
+    display: flex;
+    border: rgb(51, 51, 51) solid 2.5px;
+    border-radius: 50%;
+}
+
+.posts .post .header img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.posts .post .header .text_row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.posts .post .header .text_row .header_content {
+    margin-left: 10px;
+    color: #f5f5f5;
+}
+
+.posts .post .header .text_row .date {
+    color: rgb(148, 148, 148);
+}
+
+.posts .post .header .text_row .follow {
+    color: rgb(71, 175, 255);
+    font-weight: 600;
+}
+
+.posts .post .header .more_options {
+    margin: auto 0;
+    margin-left: auto;
+}
