@@ -11,6 +11,7 @@
 .mainscreen .stories {
     display: flex;
     flex-direction: row;
+    gap: 18px;
 }
 
 .mainscreen .stories .story {
