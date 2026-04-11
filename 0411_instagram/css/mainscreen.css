@@ -45,6 +45,8 @@
 .posts {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 470px;
 }
 
 .posts .post {
@@ -96,6 +98,11 @@
 .posts .post .header .text_row .follow {
     color: rgb(71, 175, 255);
     font-weight: 600;
+}
+
+.posts .post .header .text_row .follow:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .posts .post .header .more_options {
