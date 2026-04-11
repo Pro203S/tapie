@@ -106,6 +106,15 @@
 }
 
 .posts .post .header .more_options {
-    margin: auto 0;
     margin-left: auto;
+}
+
+.posts .post .content {
+    display: flex;
+}
+
+.posts .post .content img {
+    margin: 0 auto;
+    width: 442px;
+    border-radius: 5px;
 }
