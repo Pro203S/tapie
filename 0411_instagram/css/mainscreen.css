@@ -118,3 +118,30 @@
     width: 442px;
     border-radius: 5px;
 }
+
+.posts .post .footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts .post .footer .options {
+    width: 446px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.posts .post .footer .options .option {
+    display: flex;
+    cursor: pointer;
+}
+
+.posts .post .footer .options .option svg {
+    padding: 8px;
+}
+
+.posts .post .footer .options .option span {
+    margin: auto 0;
+    color: #fff;
+    font-weight: 500;
+}
