@@ -3,7 +3,6 @@
     flex-direction: column;
 
     width: 630px;
-    height: calc(100vh - 16px);
     margin: 0 auto;
     margin-top: 16px;
 }
@@ -144,4 +143,22 @@
     margin: auto 0;
     color: #fff;
     font-weight: 500;
+}
+
+.posts .post .footer .content {
+    width: 446px;
+    display: flex;
+    gap: 3px;
+    margin: 0 auto;
+}
+
+.posts .post .footer .content .author {
+    color: #fff;
+    font-weight: 500;
+}
+
+.posts .post .footer .content .content {
+    margin-left: 5px;
+    color: #fff;
+    font-weight: 400;
 }
