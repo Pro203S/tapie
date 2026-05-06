@@ -77,8 +77,6 @@ const test = async () => {
 
         button.removeEventListener("click", doNotPrediction);
 
-        await delay(500);
-
         location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     };
 
