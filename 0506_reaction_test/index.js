@@ -79,7 +79,7 @@ const test = async () => {
     };
 
     button.addEventListener("click", doNotPrediction);
-    await delay(random(500, 10000));
+    await delay(random(5000, 10000));
     button.removeEventListener("click", doNotPrediction);
 
     blueTime = new Date();
