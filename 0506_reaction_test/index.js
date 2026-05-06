@@ -66,16 +66,20 @@ const test = async () => {
     if (delays.length > 0) {
         changeDesc(`${delays[delays.length - 1]}ms, 평균: ${Math.floor(avg(delays) * 100) / 100}ms (${delays.length}/5)`);
     } else {
-        changeDesc("파란색이 나올 때 버튼을 누르세요...");
+        changeDesc("초록색이 나올 때 버튼을 누르세요...");
     }
-    changeButtonBackground("#000000");
+    changeButtonBackground("#ff6a6a");
 
     // 예측 방지
     const doNotPrediction = async () => {
         changeDesc("예측해서 누르지 마세요!");
-        changeButtonBackground("#ff7a7a");
+        changeButtonBackground("#ff0000");
 
         button.removeEventListener("click", doNotPrediction);
+
+        await delay(500);
+
+        location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     };
 
     button.addEventListener("click", doNotPrediction);
@@ -84,7 +88,7 @@ const test = async () => {
 
     blueTime = new Date();
     changeDesc("버튼을 누르세요!");
-    changeButtonBackground("#33cfff", true);
+    changeButtonBackground("#5cff33", true);
 
     await new Promise((resolve) => {
         const cb = async () => {
@@ -112,7 +116,7 @@ const result = () => {
 
     delays = [];
     blueTime = undefined;
-    changeButtonBackground("#83ff7e");
+    changeButtonBackground("#000000");
     document.querySelector("#button").addEventListener("click", buttonClick);
 }
 
@@ -133,7 +137,7 @@ const buttonClick = async () => {
         document.addEventListener("DOMContentLoaded", a);
     });
 
-    changeButtonBackground("#83ff7e");
+    changeButtonBackground("#000000");
     document.querySelector("#screen").className = "fadeIn";
 
     document.querySelector("#button").addEventListener("click", buttonClick);
