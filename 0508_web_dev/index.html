@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="index.css" rel="stylesheet">
+    <title>깃허브개발자신상정보사이트</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>깃허브개발자신상정보사이트</h1>
+        <br>
+
+        <div class="search-box">
+            <input type="text" id="username-input" placeholder="GitHub 아이디">
+            <button id="search-btn">검색</button>
+        </div>
+
+        <p id="message" class="message"></p>
+
+        <div id="profile-card" class="card hidden">
+            <img id="avatar" src="" alt="">
+
+            <h2 id="name">이름</h2>
+            <p id="bio">소개글이 없습니다.</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <p>팔로워</p>
+                    <strong id="followers">0</strong>
+                </div>
+                <div class="stat">
+                    <p>레포지토리</p>
+                    <strong id="repository">0</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
