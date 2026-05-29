@@ -1,15 +1,15 @@
 {
-  "name": "0529_word_relay",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+  "name": "pro203s-discord-template",
+  "version": "1.0.0",
+  "description": "@pro203s/discord template",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "discord start"
   },
   "dependencies": {
-    "discord.js": "^14.26.4"
+    "@pro203s/discord": "^1.0.0"
   }
 }
