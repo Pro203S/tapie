@@ -3,15 +3,22 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "bun ./src/index.ts",
+    "dev": "nodemon -e ts,txt -x \"bun ./src/index.ts\""
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/node": "^25.9.1"
+    "@types/node": "^25.9.1",
+    "nodemon": "^3.1.14"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "discord.js": "^14.26.4",
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "ora": "^9.4.0"
   }
 }

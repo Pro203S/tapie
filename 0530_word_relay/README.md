@@ -1,15 +1,3 @@
 # 0530_word_relay
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+https://discord.com/oauth2/authorize?client_id=1509932268666355862
