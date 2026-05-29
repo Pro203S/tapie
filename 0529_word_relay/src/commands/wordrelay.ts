@@ -1,7 +1,7 @@
 import type { Command, CommandCallbackArgs } from "@pro203s/discord";
 
 export const command: Command = {
-    "description": "핑",
+    "description": "끝말잇기를 시작해요.",
     "type": "chatInput"
 };
 
