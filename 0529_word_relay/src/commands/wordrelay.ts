@@ -7,7 +7,7 @@ export const command: Command = {
 };
 
 export const callback = async ({ interaction }: CommandCallbackArgs<"chatInput">) => {
-    let channel = interaction.channelId;
+    let channel = interaction.channel;
 
     
 };
