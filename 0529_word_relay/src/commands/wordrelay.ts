@@ -1,4 +1,5 @@
 import type { Command, CommandCallbackArgs } from "@pro203s/discord";
+import { wordRelayState } from "../shared/wordRelayState.ts";
 
 export const command: Command = {
     "description": "끝말잇기를 시작해요.",
@@ -6,5 +7,7 @@ export const command: Command = {
 };
 
 export const callback = async ({ interaction }: CommandCallbackArgs<"chatInput">) => {
+    wordRelayState.currentWord = null;
+
     return await interaction.reply("퐁");
 };
