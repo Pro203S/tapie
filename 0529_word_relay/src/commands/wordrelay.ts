@@ -7,7 +7,7 @@ export const command: Command = {
 };
 
 export const callback = async ({ interaction }: CommandCallbackArgs<"chatInput">) => {
-    wordRelayState.currentWord = null;
+    let channel = interaction.channelId;
 
-    return await interaction.reply("퐁");
+    
 };
