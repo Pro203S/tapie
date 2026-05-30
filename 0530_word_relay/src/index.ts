@@ -11,11 +11,15 @@ const CLIENT = new Client({
 });
 
 const words = fs.readFileSync("./data/words.txt", "utf-8").split(/\r?\n/);
-const getRandomWord = () => words[Math.floor(Math.random() * words.length)] as string;
+const getRandomWord = (startsWith?: string) => {
+    const v = words.filter(v => startsWith ? v.startsWith(startsWith) : v);
+    if (v.length === 0) return null;
+    return v[Math.floor(Math.random() * v.length)];
+};
 
 const wordRelayState: Record<string, {
     "words": string[],
-    "lastWordFromBot": string,
+    "lastWord": string,
     "timeout": NodeJS.Timeout
 }> = {};
 
@@ -23,9 +27,7 @@ function toRgbHex(str: string): number {
     let hash = 0;
 
     for (let i = 0; i < str.length; i++) {
-
         hash = ((hash << 5) - hash + str.charCodeAt(i)) | 0;
-
     }
 
     return hash & 0xffffff;
@@ -56,23 +58,139 @@ function toRgbHex(str: string): number {
     client.on("messageCreate", async (message) => {
         const state = wordRelayState[message.author.id];
         if (!state) return;
+        clearTimeout(state.timeout);
+        delete wordRelayState[message.author.id];
+        const userWord = message.content;
 
-        message.reply(JSON.stringify(state));
+        // 끝 글자로 시작하지 않는 단어
+        if (state.lastWord.slice(-1) !== userWord[0]) return await message.reply({
+            "embeds": [{
+                "color": 0xff1414,
+                "title": "❌ 실패!",
+                "fields": [
+                    {
+                        "name": "게임 오버",
+                        "value": "단어의 끝 글자로 시작하는 단어가 아니에요."
+                    },
+                    {
+                        "name": "나왔던 단어들",
+                        "value": [...state.words, userWord].join(" > ")
+                    }
+                ],
+                "footer": {
+                    "icon_url": "https://cdn.discordapp.com/avatars/388653325161332736/a_7f08fd9a1098df2178a9a4d84a185055.webp?size=32",
+                    "text": "Made by. @pro203s"
+                }
+            }]
+        });
+
+        // 사전에 없는 단어
+        if (!words.includes(userWord)) return await message.reply({
+            "embeds": [{
+                "color": 0xff1414,
+                "title": "❌ 실패!",
+                "fields": [
+                    {
+                        "name": "게임 오버",
+                        "value": "사전에 없는 단어에요."
+                    },
+                    {
+                        "name": "나왔던 단어들",
+                        "value": [...state.words, userWord].join(" > ")
+                    }
+                ],
+                "footer": {
+                    "icon_url": "https://cdn.discordapp.com/avatars/388653325161332736/a_7f08fd9a1098df2178a9a4d84a185055.webp?size=32",
+                    "text": "Made by. @pro203s"
+                }
+            }]
+        });
+
+        // 끝말잇기 승리
+        const newWord = getRandomWord(userWord.slice(-1));
+        if (!newWord) return await message.reply({
+            "embeds": [{
+                "color": 0xfffc5e,
+                "title": "🏆 승리!",
+                "fields": [
+                    {
+                        "name": "게임 승리",
+                        "value": `**${userWord.slice(-1)}**로 시작하는 단어를 찾지 못했어요...`
+                    },
+                    {
+                        "name": "나왔던 단어들",
+                        "value": [...state.words, userWord].join(" > ")
+                    }
+                ],
+                "footer": {
+                    "icon_url": "https://cdn.discordapp.com/avatars/388653325161332736/a_7f08fd9a1098df2178a9a4d84a185055.webp?size=32",
+                    "text": "Made by. @pro203s"
+                }
+            }]
+        });
+
+        wordRelayState[message.author.id] = ({
+            "words": [...state.words, userWord, newWord],
+            "lastWord": newWord,
+            "timeout": setTimeout(async () => {
+                // 시간 초과
+                delete wordRelayState[message.author.id];
+                await message.reply({
+                    "embeds": [{
+                        "color": 0xff1414,
+                        "title": "❌ 실패!",
+                        "fields": [
+                            {
+                                "name": "게임 오버",
+                                "value": "5초 안에 단어를 내지 못해 게임이 종료되었어요."
+                            },
+                            {
+                                "name": "나왔던 단어들",
+                                "value": [...state.words, userWord].join(" > ")
+                            }
+                        ],
+                        "footer": {
+                            "icon_url": "https://cdn.discordapp.com/avatars/388653325161332736/a_7f08fd9a1098df2178a9a4d84a185055.webp?size=32",
+                            "text": "Made by. @pro203s"
+                        }
+                    }]
+                });
+                return;
+            }, 5000)
+        } satisfies (typeof wordRelayState)[string]);
+
+        return await message.reply({
+            "content": `${newWord}!`,
+            "allowedMentions": { "repliedUser": false }
+        });
     });
 
     client.on("interactionCreate", async (interaction) => {
         if (!interaction.isChatInputCommand()) return;
         if (interaction.commandName === "stop") {
-            return;
+            clearTimeout(wordRelayState[interaction.user.id]?.timeout);
+            delete wordRelayState[interaction.user.id];
+            return await interaction.reply({
+                "embeds": [{
+                    "color": 0xff1414,
+                    "title": "❌ 끝말잇기 종료",
+                    "description": `끝말잇기를 종료했어요.`,
+                    "footer": {
+                        "icon_url": "https://cdn.discordapp.com/avatars/388653325161332736/a_7f08fd9a1098df2178a9a4d84a185055.webp?size=32",
+                        "text": "Made by. @pro203s"
+                    }
+                }]
+            });
         }
 
         if (interaction.commandName === "start") {
-            const word = getRandomWord();
+            const word = getRandomWord() as string;
 
             wordRelayState[interaction.user.id] = {
-                "words": [],
-                "lastWordFromBot": word,
+                "words": [word],
+                "lastWord": word,
                 "timeout": setTimeout(async () => {
+                    // 시간 초과
                     delete wordRelayState[interaction.user.id];
                     await interaction.editReply({
                         "embeds": [{
@@ -89,6 +207,7 @@ function toRgbHex(str: string): number {
                 }, 5000)
             };
 
+            // 끝말잇기 시작
             return await interaction.reply({
                 "embeds": [{
                     "color": toRgbHex(word),
@@ -102,6 +221,7 @@ function toRgbHex(str: string): number {
             });
         }
 
+        // unknown 명령어 핸들
         return await interaction.reply({
             "embeds": [{
                 "color": 0xff1414,
