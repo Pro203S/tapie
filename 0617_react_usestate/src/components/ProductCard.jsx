@@ -1,7 +1,21 @@
-export default function ProductCard() {
-    return <div className="product-card">
-        <img src="https://http.cat/200" alt="상품" />
-        <h3>200 고양이 이미지</h3>
-        <p>가격: 2,141,483,647원</p>
-    </div>
+import { useState } from "react";
+
+export default function ProductCard(props) {
+    const [likes, setLikes] = useState(0);
+    const [dislikes, setDislikes] = useState(0);
+    const { imgUrl, title, price } = props;
+
+    return <td style={{ "padding": 20, "textAlign": "center"}}>
+        <img src={imgUrl} alt={title} width={150} />
+
+        <h3>{title}</h3>
+        <p>가격: {price.toLocaleString()}</p>
+
+        <button type="button" onClick={() => setLikes(v => v + 1)}>
+            좋아요 {likes}
+        </button>
+        <button type="button" onClick={() => setDislikes(v => v + 1)}>
+            안좋아요 {dislikes}
+        </button>
+    </td>
 }
