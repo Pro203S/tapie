@@ -20,13 +20,22 @@ export default function App() {
       "price": 204,
       "imgUrl": "https://http.cat/204"
     }
-  ])
+  ]);
+
+  const handleReverse = () => {
+    const newOrder = [...products].reverse();
+    setProducts(newOrder);
+  };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100dvh", margin: 0 }}>
       <Header />
       <div style={{ padding: 20, flex: 1 }}>
         <h1>신상</h1>
+
+        <button type="button" onClick={handleReverse}>
+          리버스
+        </button>
 
         <table>
           <tbody>
