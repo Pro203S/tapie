@@ -1,16 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Home from './pages/Home';
 import About from './pages/About';
-import Navbar from './components/Navbar';
 import PokemonDetail from './pages/PokemonDetail';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 export default function App() {
     return (<BrowserRouter>
-        <Navbar />
         <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<About />} path="/about" />
-            <Route element={<PokemonDetail />} path="/pokemon/:name" />
+            <Route element={<Layout />} path="/">
+                <Route element={<Home />} index />
+                <Route element={<About />} path="/about" />
+                <Route element={<PokemonDetail />} path="/pokemon/:name" />
+
+                <Route path="*" element={<NotFound />} />
+            </Route>
         </Routes>
     </BrowserRouter>
     );
