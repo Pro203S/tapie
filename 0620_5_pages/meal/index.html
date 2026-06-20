@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이스 API - 학교 식단</title>
+</head>
+
+<body>
+    <a href="/">메인 페이지</a>
+    <h1>학교 식단</h1>
+    <hr />
+    <table>
+        <tr>
+            <span id="api_key">현재 API 키: </span>
+            <br>
+            <a href="/index.html">API 키 수정</a>
+        </tr>
+        <ul>
+            <li>API 루트: https://open.neis.go.kr/hub/mealServiceDietInfo</li>
+        </ul>
+        <ul>
+            <li>
+                <span>시도교육청코드:</span>
+                <select id="eduCode">
+                    <option value="">선택 하지 않음</option>
+                    <option value="B10">서울특별시교육청</option>
+                    <option value="C10">부산광역시교육청</option>
+                    <option value="D10">대구광역시교육청</option>
+                    <option value="E10">인천광역시교육청</option>
+                    <option value="F10">광주광역시교육청</option>
+                    <option value="G10">대전광역시교육청</option>
+                    <option value="H10">울산광역시교육청</option>
+                    <option value="I10">세종특별자치시교육청</option>
+                    <option value="J10">경기도교육청</option>
+                    <option value="K10">강원특별자치도교육청</option>
+                    <option value="M10">충청북도교육청</option>
+                    <option value="N10">충청남도교육청</option>
+                    <option value="P10">전북특별자치도교육청</option>
+                    <option value="Q10">전라남도교육청</option>
+                    <option value="R10">경상북도교육청</option>
+                    <option value="S10">경상남도교육청</option>
+                    <option value="T10">제주특별자치도교육청</option>
+                </select>
+            </li>
+            <li>
+                <span>행정표준코드:</span>
+                <input id="schoolCode" placeholder="학교 코드">
+            </li>
+            <li>
+                <span>급식날짜(선택):</span>
+                <input id="mealYmd" placeholder="YYYYMMDD">
+            </li>
+            <li>
+                <span>급식날짜 시작(선택):</span>
+                <input id="mealYmdFrom" placeholder="YYYYMMDD">
+            </li>
+            <li>
+                <span>급식날짜 종료(선택):</span>
+                <input id="mealYmdTo" placeholder="YYYYMMDD">
+            </li>
+        </ul>
+        <button id="request">요청 보내기</button>
+        <br>
+        <a id="req_uri" href="" target="_blank">요청 URL 열기</a>
+        <div id="result">
+
+        </div>
+    </table>
+</body>
+
+<script defer src="./script.js"></script>
+
+</html>
